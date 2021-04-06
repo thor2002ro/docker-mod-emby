@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+# Replace LD_LIBRARY_PATH
+# Based on https://github.com/linuxserver/docker-emby/issues/41
+sed -i -r -e 's/^(export LD_LIBRARY_PATH)="(.*)"/\1="\/usr\/lib\/x86_64-linux-gnu:\2"/g' /etc/services.d/emby/run
